@@ -1,0 +1,33 @@
+<div data-dojo-attach-point="fileNode">
+	<form data-dojo-attach-point="fileForm" enctype="multipart/form-data" method="post" data-dojo-type="dijit/form/Form" id="uploadForm">
+		<button data-dojo-type="dijit/form/Button" type="button" class="accordion" id="information">${nls.lblLoadFile}</button>
+		<div class="panel">
+			<p>${nls.lblFileInfo}<a href="" target="_blank">${nls.lblDirect}</a>.</p><br>
+		</div>
+	    <div class="upload">
+	        <input type="button" class="uploadButton" value="Buscar"/>
+	        <input type="file" multiple="false" data-dojo-attach-point="fileInput" name="file" accept=".zip" id="fileUpload" data-dojo-attach-event="onChange: _onUpload"/>
+	        <span class="fileName" id="estado">${nls.lblSelectFile}</span>
+	    </div>
+	</form>
+	<div class="contentLoader">
+		<div class="loader" id="loader"></div>
+	</div>
+    <button data-dojo-type="dijit/form/Button" class="accordion" type="button" id="pixel">${nls.lblPixel}</button>
+	<div class="panel">
+		<p>${nls.lblPixelInfo}</p><br>
+	</div>
+    <input type="text" id="cellsize" value="500"/>
+    <button class="button" style="vertical-align:middle" data-dojo-attach-event="onclick:_runProcess"><span>${nls.lblRun}</span></button>
+   	<div class="contentLoader2">
+   		<br>
+		<div class="loader" id="loader"></div>
+	</div>
+	<div class="statusGp">
+		<a href="" data-dojo-attach-point="download" download>${nls.lbldownloadOut}</a>
+	</div>
+	<div class="statusError">
+	   	<br>
+		<h4>${nls.lblerror} <a href="" target="_blank">Aqui</a></h4>
+	</div>
+</div>
